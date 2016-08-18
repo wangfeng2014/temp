@@ -10,18 +10,18 @@ class MyLed(threading.Thread):
         pinvalue,pinmode = defpinvalue, defpinsinksrcmode   
         pinmodename = str(pinname) + 'mode'
 
-        if not self.cf.has_section('baseconf'):
-            self.cf.add_section('baseconf')        
+        if not self.cf.has_section(self.cfgsection):
+            self.cf.add_section(self.cfgsection)
 
         # get pin value
-        if not self.cf.has_option('baseconf', pinname):
-            self.cf.set('baseconf', pinname, str(defpinvalue))
-        pinvalue = self.cf.get('baseconf', pinname)
+        if not self.cf.has_option(self.cfgsection, pinname):
+            self.cf.set(self.cfgsection, pinname, str(defpinvalue))
+        pinvalue = self.cf.get(self.cfgsection, pinname
            
         # get pinsinksrcmode
-        if not self.cf.has_option('baseconf', pinmodename):
-            self.cf.set('baseconf', pinmodename, defpinsinksrcmode)
-        pinmode = self.cf.get('baseconf', pinmodename)
+        if not self.cf.has_option(self.cfgsection, pinmodename):
+            self.cf.set(self.cfgsection, pinmodename, defpinsinksrcmode)
+        pinmode = self.cf.get(self.cfgsection, pinmodename)
 
         # save configfile 
         fp = open(self.configfile,"w")
@@ -32,19 +32,20 @@ class MyLed(threading.Thread):
 
     def getpinmode(self,pinname, sinksrcmode):
         pinmodename = str(pinname) + 'mode'
-        if self.cf.has_option('baseconf', pinmodename):
-            return self.cf.getint('baseconf', pinmodename)
+        if self.cf.has_option(self.cfgsection, pinmodename):
+            return self.cf.getint(self.cfgsection, pinmodename)
 
-        if not self.cf.has_section('baseconf'):
-            self.cf.add_section('baseconf')        
+        if not self.cf.has_section(self.cfgsection):
+            self.cf.add_section(self.cfgsection)
         
-        self.cf.set('baseconf', pinmodename, sinksrcmode)
+        self.cf.set(self.cfgsection, pinmodename, sinksrcmode)
         fp = open(self.configfile,"w")
         self.cf.write(fp)
         return int(defpinvalue)
         
     def __init__(self, pinname, pinvalue,sinksrcmode='sink'):
         threading.Thread.__init__(self)
+        self.cfgsection = 'ledconf'
         self.sinksrcmode = sinksrcmode
         
         # init configparser
@@ -86,8 +87,8 @@ class MyLed(threading.Thread):
     def readSeqs(self):
         tmpList=[]
         for i in range(20):
-            if self.cf.has_option('baseconf','seq_'+str(i)):
-                seq = self.cf.get('baseconf', 'seq_'+str(i))
+            if self.cf.has_option(self.cfgsection,'seq_'+str(i)):
+                seq = self.cf.get(self.cfgsection, 'seq_'+str(i))
                 tmpList.append( map(str.strip, seq.split(',')))            
             else:                
                 tmpList.append([])                
