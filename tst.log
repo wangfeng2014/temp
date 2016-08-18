@@ -1,0 +1,184 @@
+2016-07-13 08:32:42,585 - INFO - sensorDev.py:59 - root - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 08:32:42,618 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:42,625 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:42,626 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:43,660 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:43,668 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:43,670 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:44,706 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:44,716 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:44,718 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:45,753 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:45,764 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:45,766 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:46,800 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc02583a99
+2016-07-13 08:32:46,809 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.0
+2016-07-13 08:32:46,811 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:47,845 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:47,862 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:47,864 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:48,899 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:48,908 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:48,910 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:49,945 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:49,954 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:49,956 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:50,991 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:51,003 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:51,005 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:52,040 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:52,050 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:52,051 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:53,086 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:53,097 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:53,099 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:54,134 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc02583a99
+2016-07-13 08:32:54,144 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.0
+2016-07-13 08:32:54,146 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:55,181 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:55,193 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:55,195 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:56,230 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:56,246 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:56,247 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:57,283 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:32:57,293 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:57,295 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:58,329 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fb02594a98
+2016-07-13 08:32:58,337 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.1&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:58,339 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:32:59,374 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fb02594a98
+2016-07-13 08:32:59,383 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.1&CMD=&SN=8&HM=60.1
+2016-07-13 08:32:59,384 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:00,420 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fb025a0a99
+2016-07-13 08:33:00,428 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.1&CMD=&SN=8&HM=60.2
+2016-07-13 08:33:00,430 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:01,466 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fb025a0a99
+2016-07-13 08:33:01,475 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.1&CMD=&SN=8&HM=60.2
+2016-07-13 08:33:01,477 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:02,512 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:33:02,521 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:33:02,523 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:03,558 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc025abb58
+2016-07-13 08:33:03,568 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.2
+2016-07-13 08:33:03,570 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:04,606 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fb02594a98
+2016-07-13 08:33:04,614 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.1&CMD=&SN=8&HM=60.1
+2016-07-13 08:33:04,615 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:05,651 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:33:05,661 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:33:05,663 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:06,698 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:33:06,705 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:33:06,707 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:07,741 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc025abb58
+2016-07-13 08:33:07,749 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.2
+2016-07-13 08:33:07,749 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:08,784 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fb025a0a99
+2016-07-13 08:33:08,797 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.1&CMD=&SN=8&HM=60.2
+2016-07-13 08:33:08,799 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:09,834 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc0259fb59
+2016-07-13 08:33:09,842 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.1
+2016-07-13 08:33:09,844 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 08:33:10,878 - DEBUG - temp.py:29 - root - getTempAndHumi - recv data: 01030400fc025abb58
+2016-07-13 08:33:10,887 - DEBUG - sensorDev.py:73 - root - sendSensorData - send: http://192.168.1.119/sensor?TM=25.2&CMD=&SN=8&HM=60.2
+2016-07-13 08:33:10,889 - DEBUG - sensorDev.py:74 - root - sendSensorData - recv: OK
+2016-07-13 09:03:42,131 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:03:42,141 - INFO - sensorDev.py:59 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:03:42,146 - DEBUG - sensorDev.py:73 - root.sensor - sendSensorData - send: http://192.168.1.119/sensor?TM=11&CMD=&SN=8&HM=12
+2016-07-13 09:03:42,146 - DEBUG - sensorDev.py:74 - root.sensor - sendSensorData - recv: OK
+2016-07-13 09:03:42,147 - INFO - sensorDev.py:92 - root.sensor - <module> - hello
+2016-07-13 09:04:06,693 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:04:06,702 - INFO - sensorDev.py:59 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:25:39,187 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:25:39,200 - INFO - sensorDev.py:62 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:26:48,102 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:26:48,103 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:26:48,112 - INFO - sensorDev.py:62 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:27:44,380 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:27:44,381 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:27:44,392 - INFO - sensorDev.py:62 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:29:48,716 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:29:48,726 - INFO - sensorDev.py:62 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:30:58,479 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:30:58,489 - INFO - sensorDev.py:65 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:31:13,101 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:31:13,102 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:31:13,112 - INFO - sensorDev.py:65 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:32:35,420 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:32:35,421 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:32:35,431 - INFO - sensorDev.py:66 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:34:10,701 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:34:10,701 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:34:10,713 - INFO - sensorDev.py:67 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:35:02,415 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:35:02,416 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:35:02,426 - INFO - sensorDev.py:67 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:35:35,624 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:35:35,625 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:35:35,639 - INFO - sensorDev.py:67 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:36:16,995 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:36:16,995 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:36:17,004 - INFO - sensorDev.py:67 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:36:17,004 - ERROR - sensorDev.py:54 - root.sensor - applyOptions - not support option: ['TransInterval', '1']
+2016-07-13 09:38:10,089 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:38:10,090 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:38:10,100 - INFO - sensorDev.py:63 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:38:10,101 - ERROR - sensorDev.py:53 - root.sensor - applyOptions - global name 'logger' is not defined
+2016-07-13 09:39:53,405 - ERROR - sensorDev.py:26 - root.sensor - getInterval - No option 'transinterval' in section: 'fromserverconf'
+2016-07-13 09:39:53,406 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:39:53,416 - INFO - sensorDev.py:62 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
+2016-07-13 09:39:53,416 - ERROR - sensorDev.py:50 - root.sensor - applyOptions - not support option: ['TransInterval', '1']
+2016-07-13 09:40:36,703 - DEBUG - sensorDev.py:33 - root.sensor - isAlarmEnabled - Not a boolean: 
+2016-07-13 09:40:36,718 - INFO - sensorDev.py:62 - root.sensor - initFromServer - GET OPTION FROM:8
+TransInterval=1
+Alarm=
+
