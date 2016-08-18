@@ -16,7 +16,7 @@ class MyLed(threading.Thread):
         # get pin value
         if not self.cf.has_option(self.cfgsection, pinname):
             self.cf.set(self.cfgsection, pinname, str(defpinvalue))
-        pinvalue = self.cf.get(self.cfgsection, pinname
+        pinvalue = self.cf.get(self.cfgsection, pinname)
            
         # get pinsinksrcmode
         if not self.cf.has_option(self.cfgsection, pinmodename):
