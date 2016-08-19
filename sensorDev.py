@@ -20,6 +20,7 @@ class sensorDev:
         self.cf = ConfigParser.ConfigParser()
         self.cf.read(sys.path[0]+'/config.ini')
         self.server = self.cf.get('baseconf','server_ip')
+        self.server_port = self.cf.get('baseconf', 'server_port')
         self.sn = self.cf.get('baseconf','serial_number')
         self.interval = self.getInterval()
         self.alarm = self.isAlarmEnabled()
@@ -82,7 +83,7 @@ class sensorDev:
         path = '/sensorcmd'
         data = {'SN':self.sn, 'ID':index, 'Return':result, 'CMD':cmd}     
         try:
-            url = "http://" + self.server + path                    
+            url = "http://" + self.server + ":" + self.server_port + path
             ret =  myHttp.postRequest(url,urllib.urlencode(data)+'\n')            
             self.logger.debug("send: " + url)
             self.logger.debug("recv: " + ret)
@@ -93,7 +94,7 @@ class sensorDev:
                 
     def sendSensorData(self,path,data):
         try:
-            url = "http://" + self.server + path + urllib.urlencode(data)                   
+            url = "http://" + self.server + ":" + self.server_port + path + urllib.urlencode(data)
             ret =  myHttp.getRequest(url)            
             self.logger.debug("send: " + url)
             self.logger.debug("recv: " + ret)
