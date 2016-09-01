@@ -64,7 +64,7 @@ class MyLed(threading.Thread):
         
         # set const sequence transfer info
         self.short = [0.3,0.3]
-        self.long = [1,0.3]
+        self.long = [1.5,0.3]
         self.on = [1,0]
         self.off = [0,1]
         self.space = [1]

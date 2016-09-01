@@ -11,6 +11,7 @@ import binascii
 import time
 import struct
 import socket
+import commands
 
 class Status:
     PowerOn = 0
@@ -20,10 +21,10 @@ class Status:
     OpenSensorFail = 1
     ReadSensorFail = 2
     NetWorkError = 3
-    TempTooHigh = 10
-    TempTooLow = 11
-    HumiTooHigh = 12
-    HumiTooLow = 13
+    TempTooLow = 10
+    TempTooHigh = 11
+    HumiTooLow = 12
+    HumiTooHigh = 13
     
     
 
@@ -50,6 +51,17 @@ def getTempAndHumi(comdev):
 def updateCommonError(status):
     myled.updateStatus(status)
     mybuzzer.updateStatus(status)
+
+def getdevname():
+    value, ret =  commands.getstatusoutput('ls -lh /dev/serial/by-id |grep -i serial')
+    if  ret != '':
+        dev = ret.split()[-1]
+        dev = dev.split('/')[-1]
+        return '/dev/'+dev
+    else:
+        return "/dev/ttyUSB0"
+
+
     
 if __name__ == '__main__':
     try:
@@ -79,6 +91,8 @@ if __name__ == '__main__':
         mybuzzer.start()
         
         retryInterval = 5 # seconds    
+
+        devname =  getdevname()
         
         
         # main loop
@@ -86,7 +100,7 @@ if __name__ == '__main__':
             
             # check com device
             if not comdev.IsOpened():
-                if not comdev.Open('/dev/ttyUSB0'):                
+                if not comdev.Open(devname):
                     logger.error("open usb com failed")                
                     updateCommonError(Status.OpenSensorFail)
                     mygreenled.updateStatus(Status.PowerOn)    
@@ -98,7 +112,7 @@ if __name__ == '__main__':
             if temp == None or humi == None:
                 logger.error("no data get , reinitialize the com device.")
                 comdev.Close()
-                comdev.Open('/dev/ttyUSB0')            
+                comdev.Open(devname)
                 updateCommonError(Status.ReadSensorFail)
                 mygreenled.updateStatus(Status.PowerOn)    
                 time.sleep(retryInterval)        
@@ -132,7 +146,7 @@ if __name__ == '__main__':
                     alarmstatus = Status.TempTooHigh
                 elif humi < sensor.h_ltd:
                     alarmstatus = Status.HumiTooLow
-                elif humi > sensor.h_ltd:
+                elif humi > sensor.h_htd:
                     alarmstatus = Status.HumiTooHigh
             
             # set  led final status.
