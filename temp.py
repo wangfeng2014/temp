@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import logging  
+import logging
 import logging.config
 import ConfigParser
 import sys
@@ -25,8 +25,8 @@ class Status:
     TempTooHigh = 11
     HumiTooLow = 12
     HumiTooHigh = 13
-    
-    
+
+
 
 def runOnlyOne():
     try:
@@ -47,7 +47,7 @@ def getTempAndHumi(comdev):
             return (temp/10.0, humi/10.0)
     else:
         return (None,None)
-    
+
 def updateCommonError(status):
     myled.updateStatus(status)
     mybuzzer.updateStatus(status)
@@ -62,51 +62,54 @@ def getdevname():
         return "/dev/ttyUSB0"
 
 
-    
+
 if __name__ == '__main__':
     try:
         runOnlyOne()
-        logging.config.fileConfig(sys.path[0]+"/logger.conf")  
+        logging.config.fileConfig(sys.path[0]+"/logger.conf")
         logger = logging.getLogger('root')
-        
+
         CHECKMSG = "01 03 00 00 00 02 C4 0B"
         senddata = binascii.a2b_hex(CHECKMSG.replace(' ',''))
-        
+
         comdev = ComDev.ComDev()
         sensor = sensorDev.sensorDev()
 
         mygreenled = led.MyLed('greenledpin', 21)
         mygreenled.updateStatus(Status.PowerOn)
-        mygreenled.setDaemon(True)    
+        mygreenled.setDaemon(True)
         mygreenled.start()
-        
+
         myled = led.MyLed('redledpin', 23)
         myled.updateStatus(Status.BuzzerSilence)
-        myled.setDaemon(True)    
+        myled.setDaemon(True)
         myled.start()
-        
+
         mybuzzer = led.MyLed('byzzerpin', 24)
         mybuzzer.updateStatus(Status.BuzzerSilence)
-        mybuzzer.setDaemon(True)        
+        mybuzzer.setDaemon(True)
         mybuzzer.start()
-        
-        retryInterval = 5 # seconds    
+
+        retryInterval = 15 # seconds
 
         devname =  getdevname()
-        
-        
+
+
         # main loop
-        while True:        
-            
+        while True:
+
+            # get cmd request from server. keep communiction with server even sensor is inaccessable.
+            sensor.getCmdRequest()
+
             # check com device
             if not comdev.IsOpened():
                 if not comdev.Open(devname):
-                    logger.error("open usb com failed")                
+                    logger.error("open usb com failed")
                     updateCommonError(Status.OpenSensorFail)
-                    mygreenled.updateStatus(Status.PowerOn)    
-                    time.sleep(retryInterval)        
+                    mygreenled.updateStatus(Status.PowerOn)
+                    time.sleep(retryInterval)
                     continue
-           
+
             # get data from sensor
             temp,humi = getTempAndHumi(comdev)
             if temp == None or humi == None:
@@ -114,32 +117,32 @@ if __name__ == '__main__':
                 comdev.Close()
                 comdev.Open(devname)
                 updateCommonError(Status.ReadSensorFail)
-                mygreenled.updateStatus(Status.PowerOn)    
-                time.sleep(retryInterval)        
+                mygreenled.updateStatus(Status.PowerOn)
+                time.sleep(retryInterval)
                 continue
 
 
-            # get config from server                 
+            # get config from server
             if not sensor.isInitialized:
                 if not sensor.initFromServer():
                     updateCommonError(Status.NetWorkError)
-                    mygreenled.updateStatus(Status.PowerOn)    
-                    time.sleep(retryInterval*3)        
+                    mygreenled.updateStatus(Status.PowerOn)
+                    time.sleep(retryInterval*4)
                     continue
-                
+
             # send sensor data to server
             ret = sensor.reportData(temp, humi)
             if ret == None or ret == '':
                 updateCommonError(Status.NetWorkError)
-                mygreenled.updateStatus(Status.PowerOn)    
-                time.sleep(retryInterval*3)        
+                mygreenled.updateStatus(Status.PowerOn)
+                time.sleep(retryInterval*3)
                 continue
-                
-            
-            
-            # check the temp and humi range 
-            alarmstatus = Status.BuzzerSilence    
-            if sensor.alarm:            
+
+
+
+            # check the temp and humi range
+            alarmstatus = Status.BuzzerSilence
+            if sensor.alarm:
                 if temp < sensor.t_ltd:
                     alarmstatus = Status.TempTooLow
                 elif temp > sensor.t_htd:
@@ -148,18 +151,15 @@ if __name__ == '__main__':
                     alarmstatus = Status.HumiTooLow
                 elif humi > sensor.h_htd:
                     alarmstatus = Status.HumiTooHigh
-            
+
             # set  led final status.
             updateCommonError(alarmstatus)
-            mygreenled.updateStatus(Status.NormalRun)    
-            
-                                        
-            # exec possible cmd from response package.    
-            if ret.find('C:') != -1:
-                sensor.runCmd(ret)
-                
-                
+            mygreenled.updateStatus(Status.NormalRun)
+
+
+
+
             # send status???
-            time.sleep(sensor.getInterval())        
+            time.sleep(sensor.getInterval())
     finally:
             led.GPIO.cleanup()
