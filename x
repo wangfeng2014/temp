@@ -1,22 +1,16 @@
 #! /bin/sh
-### BEGIN INIT INFO
-# Provides:          sensor
-# Required-Start:    $local_fs
-# Required-Stop:
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
 # Short-Description: control the temperature & huminity detect sensor
-### END INIT INFO
 do_start(){
         sudo /home/pi/sensor/temp.py >&2 &
 }
 
 do_stop() {
-        pid = $(ps -ef|grep temp.py|grep -v grep|head -1|awk {'print $2'})
-        echo $pid
-        if [[ $pid ]] ; then
-                echo "not kill"
+        pid=$(ps -ef|grep temp.py|grep -v grep|head -1|awk {'print $2'})
+        if [ $pid ] ; then
+                echo "kill process $pid"
                 sudo kill $pid
+        else
+            echo "no precess is running"
         fi
 }
 

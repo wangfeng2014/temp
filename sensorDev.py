@@ -28,9 +28,10 @@ class sensorDev:
         self.t_htd = self.cf.getfloat('fromserverconf','t_htd')
         self.h_ltd = self.cf.getfloat('fromserverconf','h_ltd')
         self.h_htd = self.cf.getfloat('fromserverconf','h_htd')
-        self.version = '1.26.8'
+        self.version = '1.26.9'
         self.cf.set('toserverconf','version',self.version)
-        self.uri = '/sd/backend/web/index.php?'
+        #self.uri = '/treasure/backend/web/index.php?'
+        self.uri = '/iclock/'
 
 
 
@@ -102,12 +103,13 @@ class sensorDev:
 
     def sendSensorData(self,path,route,data,sendtype="GET"):
         try:
+            path = path + route['r'] + '?'
+
             if(sendtype == "GET"):
-                route.update(data)
-                url = "http://" + self.server + ":" + self.server_port + path + urllib.urlencode(route)
+                url = "http://" + self.server + ":" + self.server_port + path + urllib.urlencode(data)
                 ret =  myHttp.getRequest(url)
             else:
-                url = "http://" + self.server + ":" + self.server_port + path + urllib.urlencode(route)
+                url = "http://" + self.server + ":" + self.server_port + path
                 ret =  myHttp.postRequest(url,urllib.urlencode(data)+'\n')
 
             self.logger.debug("send: " + url)
